@@ -43,9 +43,9 @@ or
 
 ```
 apt-get install python-pip -y
-pip install -r requirements.txt
 apt-get install zabbix-agent
 git clone https://github.com/euprogramador/zabbix-docker.git
+pip install -r requirements.txt
 cd zabbix-docker
 cp *.py /etc/zabbix
 chown -R zabbix /etc/zabbix/
