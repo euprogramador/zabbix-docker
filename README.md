@@ -41,6 +41,7 @@ or
 
 ## Docker host server
 
+with root user execute:
 ```
 apt-get install python-pip -y
 apt-get install zabbix-agent
