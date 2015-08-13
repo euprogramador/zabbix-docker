@@ -43,8 +43,7 @@ or
 
 with root user execute:
 ```
-apt-get install python-pip -y
-apt-get install zabbix-agent
+apt-get install python-pip zabbix-agent -y
 git clone https://github.com/euprogramador/zabbix-docker.git
 cd zabbix-docker
 pip install -r requirements.txt
