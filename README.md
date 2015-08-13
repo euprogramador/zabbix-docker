@@ -45,8 +45,8 @@ or
 apt-get install python-pip -y
 apt-get install zabbix-agent
 git clone https://github.com/euprogramador/zabbix-docker.git
-pip install -r requirements.txt
 cd zabbix-docker
+pip install -r requirements.txt
 cp *.py /etc/zabbix
 chown -R zabbix /etc/zabbix/
 chmod u+x /etc/zabbix/*.py
