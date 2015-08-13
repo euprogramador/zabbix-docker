@@ -42,17 +42,21 @@ or
 ## Docker host server
 
 ```
-# apt-get install zabbix-agent
-# git clone https://github.com/euprogramador/zabbix-docker.git
-# cd zabbix-docker
-# cp *.py /etc/zabbix
-# chown -R zabbix /etc/zabbix/
-# chmod u+x /etc/zabbix/*.py
-# echo 'Defaults:username !requiretty' >> /etc/sudoers
-# echo "EnableRemoteCommands=1" >> /etc/zabbix/zabbix_agentd.conf
-# echo "Timeout=30" >> /etc/zabbix/zabbix_agentd.conf
-# echo "zabbix ALL=NOPASSWD: /etc/zabbix/list_containers_docker_lld.py" >> /etc/sudoers
-# echo "*/5 * * * *   root /etc/zabbix/docker_stats.py" > /etc/cron.d/docker-zabbix
+apt-get install python-pip -y
+pip install -r requirements.txt
+apt-get install zabbix-agent
+git clone https://github.com/euprogramador/zabbix-docker.git
+cd zabbix-docker
+cp *.py /etc/zabbix
+chown -R zabbix /etc/zabbix/
+chmod u+x /etc/zabbix/*.py
+echo 'Defaults:username !requiretty' >> /etc/sudoers
+echo "EnableRemoteCommands=1" >> /etc/zabbix/zabbix_agentd.conf
+echo "Timeout=30" >> /etc/zabbix/zabbix_agentd.conf
+echo "zabbix ALL=NOPASSWD: /etc/zabbix/list_containers_docker_lld.py" >> /etc/sudoers
+echo "*/5 * * * *   root /etc/zabbix/docker_stats.py" > /etc/cron.d/docker-zabbix
+#### configure o hostname com o nome do host e server com o nome do servidor zabbix
+/etc/init.d/zabbix-agent restart
 ```
 
 Configure o servidor do zabbix
